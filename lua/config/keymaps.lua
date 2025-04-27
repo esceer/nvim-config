@@ -24,6 +24,9 @@ keymap.set("n", "<C-j>", "<C-w>-", opts)
 keymap.set("n", "sh", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
 
+-- Open IDE messages (errors, warnings, etc.)
+keymap.set("n", "<leader>m", ":messages<CR>", { desc = "Show Messages" })
+
 -- Diagnostics
 -- keymap.set("n", "<C-J>", function()
 --   vim.diagnostic.goto({ next = true })

@@ -5,7 +5,9 @@
 -- Turn of paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
-  command = "set nopaste",
+  callback = function()
+    vim.opt.paste = false
+  end,
 })
 
 -- Fix conceallevel for json files
