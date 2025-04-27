@@ -27,6 +27,12 @@ keymap.set("n", "sv", ":vsplit<Return>", opts)
 -- Open IDE messages (errors, warnings, etc.)
 keymap.set("n", "<leader>m", ":messages<CR>", { desc = "Show Messages" })
 
+-- Move lines up/down
+keymap.set("n", "<A-up>", ":m .-2<CR>==", { desc = "Move line up" })
+keymap.set("n", "<A-down>", ":m .+1<CR>==", { desc = "Move line down" })
+keymap.set("v", "<A-up>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
+keymap.set("v", "<A-down>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
+
 -- Diagnostics
 -- keymap.set("n", "<C-J>", function()
 --   vim.diagnostic.goto({ next = true })
