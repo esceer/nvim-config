@@ -1,4 +1,5 @@
 return {
+  -- mason
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)

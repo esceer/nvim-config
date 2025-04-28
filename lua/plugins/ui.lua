@@ -1,4 +1,29 @@
 return {
+  -- messages, cmdline and the popupmenu
+  {
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      table.insert(opts.routes, {
+        filter = {
+          event = "notify",
+          find = "No information available",
+        },
+        opts = { skip = true },
+      })
+
+      opts.presets.lsp_doc_border = true
+    end,
+  },
+
+  -- notifications
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      timeout = 5000,
+    },
+  },
+
+  -- bufferline
   {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
@@ -7,6 +32,8 @@ return {
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
   },
+
+  -- dashboard
   {
     "snacks.nvim",
     opts = {
