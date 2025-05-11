@@ -28,8 +28,9 @@ return {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
     keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
+      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
+      { "<M-Tab>", "<Cmd>BufferLineMoveNext<CR>", desc = "Move buffer right" },
     },
   },
 
@@ -37,14 +38,18 @@ return {
   {
     "snacks.nvim",
     opts = {
+      picker = {
+        hidden = true, -- for hidden files
+        ignored = true, -- for .gitignore files
+      },
       dashboard = {
         preset = {
           pick = function(cmd, opts)
-            return LazyVim.pick(cmd, opts)()
+            return require("snacks").pick(cmd, opts)
           end,
           header = [[
  ███╗    ██╗                        ██╗    ██╗  ██╗  ███╗     ███╗
- ████╗   ██║   ██████╗    ██████╗   ██╗    ██╗  ██║  ████╗   ████║
+ ████╗   ██║   ██████╗    ██████╗   ██║    ██║  ██║  ████╗   ████║
  ██╔██╗  ██║  ██╔═══██╗  ██╔═══██╗  ██║    ██║  ██║  ██╔██╗ ██╔██║
  ██║╚██╗ ██║  ████████║  ██║   ██║  ██║    ██║  ██║  ██║ ████╔╝██║
  ██║ ╚██╗██║  ██╔═════╝  ██║   ██║  ╚██╗  ██╔╝  ██║  ██║ ╚██╔╝ ██║

@@ -11,7 +11,7 @@ return {
     },
     keys = {
       {
-        ";b",
+        ";e",
         function()
           local telescope = require("telescope")
 
@@ -44,7 +44,7 @@ return {
         desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
-        ";r",
+        ";g",
         function()
           local builtin = require("telescope.builtin")
           builtin.live_grep({
@@ -54,7 +54,7 @@ return {
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
-        "\\\\",
+        ";b",
         function()
           local builtin = require("telescope.builtin")
           builtin.buffers()
@@ -78,7 +78,8 @@ return {
         desc = "Resume the previous telescope picker",
       },
       {
-        ";e",
+        -- Error diagnostics
+        ";x",
         function()
           local builtin = require("telescope.builtin")
           builtin.diagnostics()
